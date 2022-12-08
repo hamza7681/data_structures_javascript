@@ -57,3 +57,32 @@ for (i = 0; i < array2.length; i++) {
   array3[array1.length + 1] = array2[i];
 }
 console.log(array3);
+
+// Array sorting
+let array = [40, 30, 12, 25];
+for (i = 0; i < array.length; i++) {
+  for (j = 0; j < array.length; j++) {
+    if (array[j] > array[j + 1]) {
+      let temp = array[j];
+      array[j] = array[j + 1];
+      array[j + 1] = temp;
+    }
+  }
+}
+console.log(array);
+
+// Reverse array using recursion
+let newArray = [5, 12, 65, 89, 0];
+let temp;
+function customReverse(data, start, end) {
+  console.log(data);
+  if (start <= end) {
+    temp = data[start];
+    data[start] = data[end];
+    data[end] = temp;
+    customReverse(data, start + 1, end - 1);
+  }
+}
+
+customReverse(newArray, 0, newArray.length - 1);
+// function contains (array, starting_point, ending_point)
